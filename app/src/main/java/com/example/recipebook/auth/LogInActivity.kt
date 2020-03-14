@@ -2,6 +2,7 @@ package com.example.recipebook.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.recipebook.R
 
 class LogInActivity : AppCompatActivity() {
 
