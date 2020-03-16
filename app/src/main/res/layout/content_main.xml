@@ -1,38 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="16dp"
     xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <androidx.recyclerview.widget.RecyclerView
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:spanCount="3"
-            tools:itemCount="6"
-            tools:listitem="@layout/row_modules"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/blck"
-            android:layout_marginTop="16dp"
-            android:alpha="0.5"
-            />
+            android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:itemCount="4"
-            android:layout_marginTop="16dp"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/notifications_item" />
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listModules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:itemCount="6"
+                app:spanCount="3"
+                android:clipToPadding="false"
+                tools:listitem="@layout/row_modules"
+                 />
 
-</androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/blck"
+                android:layout_marginTop="16dp"
+                android:alpha="0.5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/notification_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="4"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/notifications_item" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

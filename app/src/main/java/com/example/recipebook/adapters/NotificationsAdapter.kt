@@ -7,27 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
-import com.example.recipebook.data.Article
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recipebook.R
+import com.example.recipebook.data.Notifications
 import com.example.recipebook.databinding.NotificationsItemBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.text.SimpleDateFormat
-import java.util.*
 private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
-class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataItem, RecyclerView.ViewHolder>(DiffCallback){
+class NotificationsAdapter( private val notificationsModelList: List<Notifications>) : ListAdapter<DataItem, RecyclerView.ViewHolder>(DiffCallback){
     //List conversions on background thread
     private val adapterScope= CoroutineScope(Dispatchers.Default)
-    fun addHeaderAndSubmitList(list: List<Article>?) {
+    fun addHeaderAndSubmitList(list: List<Notifications>?) {
         adapterScope.launch {
             val items = when (list) {
                 null -> listOf(DataItem.Header)
-                else -> listOf(DataItem.Header) + list.map{ DataItem.NewsArticle(it)}
+                else -> listOf(DataItem.Header) + list.map{ DataItem.Notification(it)}
             }
             //Get back to UI thread to update UI
             withContext(Dispatchers.Main) {
@@ -35,6 +33,9 @@ class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataIte
             }
         }
     }
+//    override fun getItemCount(): Int {
+//        return notificationsModelList.size+1
+//    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var layoutInflater = LayoutInflater.from(parent.context)
 
@@ -44,18 +45,18 @@ class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataIte
             else->throw ClassCastException("Unknown View Type: $viewType")
         }
     }
-
+//    override fun getItemCount() = notificationsModelList.size
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         when(holder){
             is MyViewHolder ->{
                 //Bind item at the given position to the recycler view
-                val news = getItem(position) as DataItem.NewsArticle
+                val notifications = getItem(position) as DataItem.Notification
                 holder.itemView.setOnClickListener {
-                    clickListener.onClick(news.article)
+//                    clickListener.onClick(notifications.notifications)
                 }
-                holder.bind(news.article,clickListener)
+                holder.bind(notifications.notifications)
             }
         }
 
@@ -63,7 +64,7 @@ class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataIte
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
             is DataItem.Header -> ITEM_VIEW_TYPE_HEADER
-            is DataItem.NewsArticle-> ITEM_VIEW_TYPE_ITEM
+            is DataItem.Notification-> ITEM_VIEW_TYPE_ITEM
         }
     }
 
@@ -71,12 +72,11 @@ class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataIte
 
         @RequiresApi(Build.VERSION_CODES.O)
         fun bind(
-            news: Article,
-            clickListener: NewsListener
+            notifications: Notifications
         ) {
 
-//            binding.newsItem=news
-//            binding.clickListener=clickListener
+            binding.textView3.text=notifications.notificationsTitle
+            binding.textView4.text=notifications.time
             binding.executePendingBindings()
         }
 
@@ -101,14 +101,14 @@ class NotificationsAdapter(val clickListener:NewsListener) : ListAdapter<DataIte
         }
     }
 }
-class NewsListener(val clickListener:(news:Article)-> Unit){
-    fun onClick(news:Article)=clickListener(news)
+class NewsListener(val clickListener:(news:Notifications)-> Unit){
+    fun onClick(news:Notifications)=clickListener(news)
 
 }
 //Data holder class to either represent the Article object or the header
 sealed class DataItem{
     //This represents an item in the adapter
-    data class NewsArticle(val article:Article):DataItem(){
+    data class Notification(val notifications:Notifications):DataItem(){
         override val id = Long.MAX_VALUE
     }
     object Header:DataItem(){

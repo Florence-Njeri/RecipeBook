@@ -10,7 +10,7 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
-    card_view:cardBackgroundColor="@color/white"
+    card_view:cardBackgroundColor="@color/backgroundGreen"
     card_view:cardCornerRadius="8dp">
 
     <LinearLayout
