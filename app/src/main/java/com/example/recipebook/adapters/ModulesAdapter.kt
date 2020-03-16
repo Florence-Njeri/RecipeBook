@@ -45,10 +45,10 @@ internal class ModulesAdapter(
             image.setImageDrawable(
                 ContextCompat.getDrawable(
                     context,
-                    R.drawable.icon_networks
+                    moduleModel.moduleImage
                 )
             )
-            title.text = "Title"
+            title.text = moduleModel.moduleTitle
             itemView.setOnClickListener {
 //                clickListener(position)
             }

@@ -7,12 +7,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Notifications"
-        android:textColor="@color/blck"
+        android:textColor="@color/backgroundGreen"
         android:layout_margin="8dp"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_weight="1"
-        xmlns:android="http://schemas.android.com/apk/res/android" />
+        android:paddingLeft="8dp"
+         />
 
     <TextView android:id="@+id/header"
         android:layout_width="0dp"
@@ -20,9 +21,9 @@
         android:text="Clear notifications"
         android:textColor="@color/blck"
         android:layout_margin="8dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_weight="1"
         android:gravity="end"
-        xmlns:android="http://schemas.android.com/apk/res/android" />
+         />
 </LinearLayout>

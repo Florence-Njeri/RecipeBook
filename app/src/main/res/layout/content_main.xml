@@ -10,9 +10,9 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="16dp">
+        app:cardCornerRadius="25dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:layout_height="0.5dp"
                 android:background="@color/blck"
                 android:layout_marginTop="16dp"
-                android:alpha="0.5" />
+                android:alpha="0.2" />
 
             <androidx.recyclerview.widget.RecyclerView
                android:id="@+id/notification_list"

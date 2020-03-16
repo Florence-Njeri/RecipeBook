@@ -10,7 +10,6 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
-    card_view:cardBackgroundColor="@color/backgroundGreen"
     card_view:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -24,8 +23,8 @@
 
         <ImageView
             android:id="@+id/imageViewModule"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             tools:src="@drawable/icon_chat" />
