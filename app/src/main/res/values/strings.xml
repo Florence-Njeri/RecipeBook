@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RecipeBook</string>
     <string name="explore_more_recipes">Explore more recipes</string>
+    <string name="explore_more_ingredients">Explore more ingredients</string>
 </resources>

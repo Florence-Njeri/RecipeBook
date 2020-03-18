@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notification_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="6"
+                android:layout_marginTop="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recipe_item" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/explore_more_ingredients"
+                android:textColor="@color/backgroundGreen"
+                android:gravity="center_horizontal"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

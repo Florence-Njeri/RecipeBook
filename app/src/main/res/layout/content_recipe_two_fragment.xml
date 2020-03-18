@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
-    android:background="#00ffffff"
     android:orientation="vertical">
 
     <TextView
@@ -15,52 +13,50 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Search by Recipe"
+        android:text="Search by Ingredients"
         android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
     <include
-        layout="@layout/recipe_search_bar"
+        layout="@layout/ingredients_search_bar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="24dp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="24dp"
-        card_view:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        >
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recipe_list"
+                android:id="@+id/ingredients_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:itemCount="6"
                 android:layout_marginTop="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="6"
-                tools:listitem="@layout/recipe_item"
-                />
+                tools:listitem="@layout/recipe_item" />
 
             <TextView
-                android:background="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center_horizontal"
-                android:paddingBottom="16dp"
-                android:text="@string/explore_more_recipes"
+                android:text="@string/explore_more_ingredients"
                 android:textColor="@color/backgroundGreen"
-                android:textSize="16sp" />
+                android:gravity="center_horizontal"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
