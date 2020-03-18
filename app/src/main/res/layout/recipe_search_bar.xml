@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cardElevation="20dp"
+    app:cardCornerRadius="10dp"
+    >
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <EditText
+            android:id="@+id/search_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="What recipe are you looking for?"
+            android:layout_centerVertical="true"
+            android:inputType="text"
+            android:textStyle="bold"
+            android:background="@null"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_search"
+            android:layout_alignEnd="@id/search_hint"
+            android:layout_gravity="center_vertical|end"
+            android:layout_alignRight="@id/search_hint"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
