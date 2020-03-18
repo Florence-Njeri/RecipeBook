@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/chat_bubble_unread"
+    android:layout_margin="16dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A selection of chicken dishes served together on a white table. This is comfort food heaven."
+        android:gravity="start"
+        android:textSize="16sp"
+        android:textColor="@color/blck"
+        android:padding="16dp"/>
+
+</LinearLayout>
