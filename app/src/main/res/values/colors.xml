@@ -8,4 +8,5 @@
     <color name="backgroundGreen">#34A853</color>
     <color name="backgroundMain">#E5E5E5</color>
     <color name="blck">#000</color>
+    <color name="removeFriendBackground">#979797</color>
 </resources>

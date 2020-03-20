@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/removeFriendBackground"
+        />
+    <!--border color and border width-->
+    <stroke
+        android:width="2dp"
+        android:color="@color/removeFriendBackground"
+         />
+    <!--border radius in dp-->
+    <corners android:radius="10dp" />
+
+</shape>
