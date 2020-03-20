@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.recipebook.chats.ChatsFragment"
+        android:label="chats_fragment"
+        tools:layout="@layout/chats_fragment" >
+        <action
+            android:id="@+id/action_chatsFragment_to_openedChatsFragment"
+            app:destination="@id/openedChatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.recipebook.favourites.FavouritesFragment"
+        android:label="favourites_fragment"
+        tools:layout="@layout/favourites_fragment" />
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.recipebook.friends.FriendsFragment"
+        android:label="friends_fragment"
+        tools:layout="@layout/friends_fragment" />
+    <fragment
+        android:id="@+id/networkFragment"
+        android:name="com.example.recipebook.networks.NetworkFragment"
+        android:label="network_fragment"
+        tools:layout="@layout/network_fragment" />
+    <fragment
+        android:id="@+id/openedChatsFragment"
+        android:name="com.example.recipebook.chats.OpenedChatsFragment"
+        android:label="opened_chats_fragment"
+        tools:layout="@layout/opened_chats_fragment" >
+        <action
+            android:id="@+id/action_openedChatsFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.recipebook.recipe.RecipeFragment"
+        android:label="recipe_two_fragment"
+        tools:layout="@layout/recipe_two_fragment" >
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeTwoFragment"
+            app:destination="@id/recipeTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeTwoFragment"
+        android:name="com.example.recipebook.recipe.RecipeTwoFragment"
+        android:label="RecipeTwoFragment"
+        tools:layout="@layout/recipe_two_fragment">
+        <action
+            android:id="@+id/action_recipeTwoFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.recipebook.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_screen">
+        <action
+            android:id="@+id/action_homeFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_friendsFragment"
+            app:destination="@id/friendsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_networkFragment"
+            app:destination="@id/networkFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+</navigation>

@@ -3,6 +3,7 @@ package com.example.recipebook
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.recipebook.adapters.ModulesAdapter
 import com.example.recipebook.adapters.NotificationsAdapter
 import com.example.recipebook.data.Module
@@ -35,8 +36,10 @@ class MainActivity : AppCompatActivity() {
             moduleModelList,
             this
         )
-        binding.includeView.listModules.adapter=module
-        binding.includeView.notificationList.adapter=adapter
+        //Find NavController
+        val navController = this.findNavController(R.id.nav_host_fragment)
+//        binding.includeView.listModules.adapter=module
+//        binding.includeView.notificationList.adapter=adapter
 
         adapter.addHeaderAndSubmitList(notificationsModelList)
 
