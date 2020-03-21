@@ -136,4 +136,6 @@ dependencies {
 //    Multidex
     implementation 'com.android.support:multidex:1.0.3'
 
+    implementation "androidx.cardview:cardview:1.0.0"
+
 }

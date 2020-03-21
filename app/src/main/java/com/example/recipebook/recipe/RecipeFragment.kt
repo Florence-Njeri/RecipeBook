@@ -1,15 +1,18 @@
 package com.example.recipebook.recipe
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.recipebook.R
+import com.example.recipebook.adapters.RecipesAdapter
+import com.example.recipebook.databinding.RecipeFragmentBinding
 
 class RecipeFragment : Fragment() {
+    private lateinit var binding: RecipeFragmentBinding
 
     companion object {
         fun newInstance() = RecipeFragment()
@@ -21,7 +24,10 @@ class RecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.recipe_fragment, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.recipe_fragment, container, false)
+        binding.includeView.recipeList.adapter = RecipesAdapter()
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

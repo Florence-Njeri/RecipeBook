@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".recipe.RecipeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:layout_gravity="top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/recipe_bg"
-        android:scaleType="centerCrop"
-        />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/scrim_gradient"/>
-    <include
-        android:layout_gravity="top"
-        android:layout_marginTop="64dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        layout="@layout/content_recipe_fragment"
-        />
+    <data>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".recipe.RecipeFragment">
+
+        <ImageView
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/recipe_bg"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/scrim_gradient" />
+
+        <include
+            android:id="@+id/include_view"
+            android:layout_gravity="top"
+            android:layout_marginTop="64dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/content_recipe_fragment" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
