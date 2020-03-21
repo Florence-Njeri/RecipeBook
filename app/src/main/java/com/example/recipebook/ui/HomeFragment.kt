@@ -48,44 +48,44 @@ class HomeFragment : Fragment() {
         notificationsModelList.add(Notifications("Adebayo Apercu sent you a message", "Yesterday"))
 
         var adapter = NotificationsAdapter(notificationsModelList)
-        var module = ModulesAdapter(
-            moduleModelList,
-            context,
-            ModulesAdapter.ModulesListener{
-
-                when {
-                    moduleModelList[0].moduleTitle == Constants.MAIN_DASHBOARD_CARD_RECIPES -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_chatsFragment )
-                    }
-                    moduleModelList[1].moduleTitle == Constants.MAIN_DASHBOARD_CARD_CHATS -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_chatsFragment)
-
-                    }
-                    moduleModelList[2].moduleTitle == Constants.MAIN_DASHBOARD_CARD_NETWORKS -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_networkFragment)
-
-                    }
-                    moduleModelList[3].moduleTitle == Constants.MAIN_DASHBOARD_CARD_FRIENDS -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_friendsFragment)
-
-                    }
-                    moduleModelList[4].moduleTitle == Constants.MAIN_DASHBOARD_CARD_FAVOURITES -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
-
-                    }
-                    else -> {
-                        view?.findNavController()
-                            ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
-
-                    }
-                }
-
-            })
+//        var module = ModulesAdapter(
+//            moduleModelList,
+//            context,
+//            ModulesAdapter.ModulesListener{
+//
+//                when {
+//                    moduleModelList[0].moduleTitle == Constants.MAIN_DASHBOARD_CARD_RECIPES -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_chatsFragment )
+//                    }
+//                    moduleModelList[1].moduleTitle == Constants.MAIN_DASHBOARD_CARD_CHATS -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_chatsFragment)
+//
+//                    }
+//                    moduleModelList[2].moduleTitle == Constants.MAIN_DASHBOARD_CARD_NETWORKS -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_networkFragment)
+//
+//                    }
+//                    moduleModelList[3].moduleTitle == Constants.MAIN_DASHBOARD_CARD_FRIENDS -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_friendsFragment)
+//
+//                    }
+//                    moduleModelList[4].moduleTitle == Constants.MAIN_DASHBOARD_CARD_FAVOURITES -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
+//
+//                    }
+//                    else -> {
+//                        view?.findNavController()
+//                            ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
+//
+//                    }
+//                }
+//
+//            })
 //        { position: Int ->
 //            val modules = moduleModelList[position]
 //            when (modules.moduleTitle) {
