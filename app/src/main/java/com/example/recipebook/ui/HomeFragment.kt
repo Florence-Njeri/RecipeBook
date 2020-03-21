@@ -141,7 +141,7 @@ class HomeFragment : Fragment() {
         }
         binding.includeView.recipesCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_recipeFragment)
+                        ?.navigate(R.id.action_homeFragment_to_recipeTabsFragment)
         }
         binding.includeView.networksCardView.setOnClickListener {
             view?.findNavController()

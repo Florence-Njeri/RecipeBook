@@ -23,12 +23,12 @@
             android:background="@null"
             android:hint="Search Friends"
             android:inputType="text"
-            android:textStyle="bold" />
+             />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_search"
+            app:srcCompat="@drawable/ic_search"
             android:layout_alignEnd="@id/search_hint"
             android:layout_gravity="center_vertical|end"
             android:layout_alignRight="@id/search_hint"

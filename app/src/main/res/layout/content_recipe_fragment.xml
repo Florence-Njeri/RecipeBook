@@ -24,7 +24,7 @@
             android:text="Search by Recipe"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:textStyle="bold" />
+             />
 
         <include
             layout="@layout/recipe_search_bar"

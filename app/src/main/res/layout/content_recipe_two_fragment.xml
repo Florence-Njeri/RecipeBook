@@ -22,7 +22,7 @@
             android:text="Search by Ingredients"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:textStyle="bold" />
+            />
 
         <include
             layout="@layout/ingredients_search_bar"

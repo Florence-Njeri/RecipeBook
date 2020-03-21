@@ -72,7 +72,15 @@
             android:id="@+id/action_homeFragment_to_networkFragment"
             app:destination="@id/networkFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_recipeFragment"
+            android:id="@+id/action_homeFragment_to_recipeTabsFragment"
+            app:destination="@id/recipeTabsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeTabsFragment"
+        android:name="com.example.recipebook.RecipeTabsFragment"
+        android:label="" >
+        <action
+            android:id="@+id/action_recipeTabsFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
     </fragment>
 </navigation>

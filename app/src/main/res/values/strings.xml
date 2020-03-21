@@ -2,4 +2,7 @@
     <string name="app_name">RecipeBook</string>
     <string name="explore_more_recipes">Explore more recipes</string>
     <string name="explore_more_ingredients">Explore more ingredients</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -9,28 +9,100 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".recipe.RecipeFragment">
 
         <ImageView
-            android:layout_gravity="top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/recipe_bg"
-            android:scaleType="centerCrop" />
+            android:layout_gravity="top"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/recipe_bg" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/scrim_gradient" />
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:text="Swipe to search by ingredient"
+                            android:textSize="14sp"
+                            />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                           android:layout_toEndOf="@id/text"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/recipe_arrow"
+                            android:layout_toRightOf="@id/text" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/ellipse_filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/filled_ellipse"
+                    android:layout_toLeftOf="@id/image"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentBottom="true"
+                    />
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignEnd="@id/cardView"
+                    android:layout_below="@id/cardView"
+                    android:layout_alignRight="@id/cardView" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
         <include
             android:id="@+id/include_view"
-            android:layout_gravity="top"
-            android:layout_marginTop="64dp"
-            android:layout_height="wrap_content"
+            layout="@layout/content_recipe_fragment"
             android:layout_width="match_parent"
-            layout="@layout/content_recipe_fragment" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="64dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
