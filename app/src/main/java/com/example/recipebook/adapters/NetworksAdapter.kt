@@ -14,7 +14,7 @@ import com.example.recipebook.data.NetworkModules
 typealias NetworkClickListener = (Int) -> Unit
 
 internal class NetworksAdapter(
-    private val moduleModelList: List<NetworkModules>,
+    private val moduleModelList: ArrayList<NetworkModules>,
     private val context: Context
 ) : RecyclerView.Adapter<NetworksViewHolder>() {
 

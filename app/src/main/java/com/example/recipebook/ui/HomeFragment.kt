@@ -37,12 +37,7 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         // TODO: Use the ViewModel
 
-//        moduleModelList.add(Module("Recipes", R.drawable.vector_recipes))
-//        moduleModelList.add(Module("Chats", R.drawable.icon_chat))
-//        moduleModelList.add(Module("Networks", R.drawable.icon_networks))
-//        moduleModelList.add(Module("Friends", R.drawable.icon_friends))
-//        moduleModelList.add(Module("Favourites", R.drawable.icon_fav))
-//        moduleModelList.add(Module("Uploads", R.drawable.vector_uploads))
+
 
 
         notificationsModelList.add(Notifications("Adebayo Apercu sent you a message", "Yesterday"))
