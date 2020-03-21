@@ -4,11 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.recipebook.R
+import com.example.recipebook.adapters.ChatsAdapter
+import com.example.recipebook.databinding.ChatsFragmentBinding
 
 class ChatsFragment : Fragment() {
+    private lateinit var binding: ChatsFragmentBinding
 
     companion object {
         fun newInstance() = ChatsFragment()
@@ -20,7 +24,9 @@ class ChatsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.chats_fragment, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.chats_fragment, container, false)
+        binding.chatsList.adapter = ChatsAdapter()
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
