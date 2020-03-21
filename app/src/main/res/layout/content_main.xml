@@ -9,11 +9,11 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:orientation="vertical"
+        app:cardCornerRadius="24dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -333,5 +333,5 @@
                 tools:listitem="@layout/notifications_item" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

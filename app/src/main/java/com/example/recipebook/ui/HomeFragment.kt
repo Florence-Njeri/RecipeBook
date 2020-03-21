@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         // TODO: Use the ViewModel
 
 
-
+        notificationsModelList.clear()
 
         notificationsModelList.add(Notifications("Adebayo Apercu sent you a message", "Yesterday"))
         notificationsModelList.add(Notifications("Adebayo Apercu sent you a message", "Yesterday"))
@@ -130,23 +130,23 @@ class HomeFragment : Fragment() {
 //        }
         binding.includeView.chatsCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_chatsFragment)
+                ?.navigate(R.id.action_homeFragment_to_chatsFragment)
         }
         binding.includeView.recipesCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_recipeTabsFragment)
+                ?.navigate(R.id.action_homeFragment_to_recipeTabsFragment)
         }
         binding.includeView.networksCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_networkFragment)
+                ?.navigate(R.id.action_homeFragment_to_networkFragment)
         }
         binding.includeView.friendsCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_friendsFragment)
+                ?.navigate(R.id.action_homeFragment_to_friendsFragment)
         }
         binding.includeView.favouritesCardView.setOnClickListener {
             view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
+                ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
         }
 //        binding.includeView.uploadsCardView.setOnClickListener {
 //            view?.findNavController()
