@@ -9,12 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.recipebook.R
-import com.example.recipebook.adapters.ModulesAdapter
 import com.example.recipebook.adapters.NotificationsAdapter
 import com.example.recipebook.data.Module
 import com.example.recipebook.data.Notifications
 import com.example.recipebook.databinding.HomeScreenBinding
-import com.example.recipebook.utils.Constants
 
 val moduleModelList = ArrayList<Module>()
 
@@ -150,10 +148,10 @@ class HomeFragment : Fragment() {
             view?.findNavController()
                         ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
         }
-        binding.includeView.uploadsCardView.setOnClickListener {
-            view?.findNavController()
-                        ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
-        }
+//        binding.includeView.uploadsCardView.setOnClickListener {
+//            view?.findNavController()
+//                        ?.navigate(R.id.action_homeFragment_to_favouritesFragment)
+//        }
         return binding.root
     }
 

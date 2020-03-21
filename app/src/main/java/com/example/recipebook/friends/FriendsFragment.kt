@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.recipebook.R
 import com.example.recipebook.adapters.FriendsAdapter
+import com.example.recipebook.databinding.FriendsFragmentBinding
 
 class FriendsFragment : Fragment() {
     private lateinit var binding: FriendsFragmentBinding
