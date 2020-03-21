@@ -24,7 +24,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/recipesCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -74,7 +74,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/chatsCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:clickable="true"
@@ -123,7 +123,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/friendsCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -171,7 +171,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/networksCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:clickable="true"
@@ -219,7 +219,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/uploadsCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:clickable="true"
@@ -267,7 +267,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/favouritesCardView"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:clickable="true"

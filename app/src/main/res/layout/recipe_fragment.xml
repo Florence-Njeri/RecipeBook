@@ -10,6 +10,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".recipe.RecipeFragment">
 
         <ImageView
@@ -19,10 +20,10 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/recipe_bg" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/scrim_gradient" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/scrim_gradient" />-->
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"

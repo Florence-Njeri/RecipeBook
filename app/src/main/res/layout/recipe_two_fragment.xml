@@ -10,7 +10,6 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0000"
         tools:context=".recipe.RecipeFragment">
 
 
@@ -91,11 +90,6 @@
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/scrim_gradient" />
 
         <include
             android:id="@+id/include_view"

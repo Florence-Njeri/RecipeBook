@@ -18,7 +18,7 @@ class IngredientsAdapter(/*var list: ArrayList<LatestNewsEvents>*/) : RecyclerVi
 
     }
 
-    override fun getItemCount()=10
+    override fun getItemCount()=6
 
     override fun onBindViewHolder(holder: LatestEventsViewHolder, position: Int) {
 //        val news: LatestNewsEvents= list[position]
