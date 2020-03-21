@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/chatsFragment"
         android:name="com.example.recipebook.chats.ChatsFragment"
-        android:label="chats_fragment"
+        android:label="Chats"
         tools:layout="@layout/chats_fragment" >
         <action
             android:id="@+id/action_chatsFragment_to_openedChatsFragment"
@@ -17,17 +17,17 @@
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.example.recipebook.favourites.FavouritesFragment"
-        android:label="favourites_fragment"
+        android:label="Favourites"
         tools:layout="@layout/favourites_fragment" />
     <fragment
         android:id="@+id/friendsFragment"
         android:name="com.example.recipebook.friends.FriendsFragment"
-        android:label="friends_fragment"
+        android:label="Friends"
         tools:layout="@layout/friends_fragment" />
     <fragment
         android:id="@+id/networkFragment"
         android:name="com.example.recipebook.networks.NetworkFragment"
-        android:label="network_fragment"
+        android:label="Networks"
         tools:layout="@layout/network_fragment" />
     <fragment
         android:id="@+id/openedChatsFragment"
@@ -41,7 +41,6 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.example.recipebook.recipe.RecipeFragment"
-        android:label="recipe_two_fragment"
         tools:layout="@layout/recipe_two_fragment" >
         <action
             android:id="@+id/action_recipeFragment_to_recipeTwoFragment"
@@ -50,7 +49,6 @@
     <fragment
         android:id="@+id/recipeTwoFragment"
         android:name="com.example.recipebook.recipe.RecipeTwoFragment"
-        android:label="RecipeTwoFragment"
         tools:layout="@layout/recipe_two_fragment">
         <action
             android:id="@+id/action_recipeTwoFragment_to_recipeFragment"
