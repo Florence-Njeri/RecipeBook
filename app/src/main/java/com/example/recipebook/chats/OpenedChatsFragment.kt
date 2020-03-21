@@ -1,15 +1,18 @@
 package com.example.recipebook.chats
 
-import androidx.lifecycle.ViewModelProviders
-import android.os.Bundle
-import androidx.fragment.app.Fragment
+import  android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.recipebook.R
+import com.example.recipebook.adapters.OpenedChatsAdapter
+import com.example.recipebook.databinding.OpenedChatsFragmentBinding
 
 class OpenedChatsFragment : Fragment() {
+    private lateinit var binding: OpenedChatsFragmentBinding
 
     companion object {
         fun newInstance() = OpenedChatsFragment()
@@ -21,7 +24,9 @@ class OpenedChatsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.opened_chats_fragment, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.opened_chats_fragment, container, false)
+        binding.recyclerView.adapter = OpenedChatsAdapter()
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
