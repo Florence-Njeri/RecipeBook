@@ -1,27 +1,23 @@
 package com.example.recipebook.adapters
-
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipebook.R
 import com.example.recipebook.data.Module
+import com.example.recipebook.databinding.RowModulesBinding
 
 typealias ClickListener = (Int) -> Unit
 
 internal class ModulesAdapter(
     private val moduleModelList: List<Module>,
-    private val context: Context
+    private val context: Context?,
+    val listener: ModulesListener
 ) : RecyclerView.Adapter<ModulesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.row_modules, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(RowModulesBinding.inflate(inflater))
     }
 
     override fun getItemCount(): Int {
@@ -29,29 +25,43 @@ internal class ModulesAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(moduleModelList[position], context, position)
+        val module: Module = moduleModelList[position]
+
+        if (context != null) {
+            holder.itemView.setOnClickListener {
+                listener.onClick()
+            }
+            holder.bind(moduleModelList[position], context, listener)
+        }
     }
 
-    internal class ViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        private val image: ImageView = itemView.findViewById(R.id.imageViewModule)
-        private val title: TextView = itemView.findViewById(R.id.textViewModule)
+    internal class ViewHolder(private var binding: RowModulesBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
 
         fun bind(
             moduleModel: Module,
             context: Context,
-            position: Int
+            clickListener: ModulesListener
         ) {
-            image.setImageDrawable(
-                ContextCompat.getDrawable(
-                    context,
-                    moduleModel.moduleImage
-                )
+            binding.clickListener = clickListener
+
+           binding.imageViewModule.setImageDrawable(
+               moduleModel.moduleImage?.let {
+                   ContextCompat.getDrawable(
+                       context,
+                       it
+                   )
+               }
             )
-            title.text = moduleModel.moduleTitle
-            itemView.setOnClickListener {
-//                clickListener(position)
-            }
+            binding.textViewModule.text = moduleModel.moduleTitle
+//            itemView.setOnClickListener {
+//                //                clickListener(position)
+//            }
         }
+    }
+
+    class ModulesListener(val clickListener: () -> Unit) {
+        fun onClick() = clickListener()
     }
 }

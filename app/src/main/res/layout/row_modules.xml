@@ -1,44 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground"
-    app:cardElevation="3dp"
-    app:cardUseCompatPadding="true"
-    card_view:cardCornerRadius="8dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <data>
+        <variable
+            name="clickListener"
+            type="com.example.recipebook.adapters.ModulesAdapter.ModulesListener" />
+        <variable
+            name="module"
+            type="com.example.recipebook.data.Module" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        tools:ignore="UseCompoundDrawables">
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="8dp"
+        android:onClick="@{() -> clickListener.onClick()}"
+        >
 
-        <ImageView
-            android:id="@+id/imageViewModule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/app_name"
-            tools:src="@drawable/icon_chat" />
-
-        <TextView
-            android:id="@+id/textViewModule"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="@color/blck"
-            tools:text="Cht" />
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageViewModule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                tools:src="@drawable/icon_chat" />
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textViewModule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/blck"
+                tools:text="Cht" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
