@@ -23,7 +23,11 @@
         android:id="@+id/friendsFragment"
         android:name="com.example.recipebook.friends.FriendsFragment"
         android:label="Friends"
-        tools:layout="@layout/friends_fragment" />
+        tools:layout="@layout/friends_fragment" >
+        <action
+            android:id="@+id/action_friendsFragment_to_unfollowFriendFragment"
+            app:destination="@id/unfollowFriendFragment" />
+    </fragment>
     <fragment
         android:id="@+id/networkFragment"
         android:name="com.example.recipebook.networks.NetworkFragment"
@@ -83,4 +87,9 @@
             android:id="@+id/action_recipeTabsFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/unfollowFriendFragment"
+        android:name="com.example.recipebook.friends.UnfollowFriendFragment"
+        android:label="UnfollowFriendFragment"
+        tools:layout="@layout/unfollow_friend_fragment"/>
 </navigation>

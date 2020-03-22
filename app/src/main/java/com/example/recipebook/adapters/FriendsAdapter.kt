@@ -3,6 +3,7 @@ package com.example.recipebook.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipebook.R
 import de.hdodenhof.circleimageview.CircleImageView
@@ -22,6 +23,10 @@ class FriendsAdapter(/*var list: ArrayList<LatestNewsEvents>*/) : RecyclerView.A
 
     override fun onBindViewHolder(holder: LatestEventsViewHolder, position: Int) {
 //        val news: LatestNewsEvents= list[position]
+        //On click navigate
+        holder.itemView.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_friendsFragment_to_unfollowFriendFragment)
+        )
 
         holder.bind(/*news*/)
     }
